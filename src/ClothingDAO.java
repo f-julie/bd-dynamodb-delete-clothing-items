@@ -20,7 +20,8 @@ public class ClothingDAO {
      * @return the Clothing instance that's been loaded from the table
      */
     public Clothing getActiveClothingItem(String partitionKey) {
-        return new Clothing();
+        Clothing clothing = mapper.load(Clothing.class, partitionKey, "active");
+        return clothing;
     }
 
     /**
